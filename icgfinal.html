@@ -116,6 +116,15 @@
             }
         );
 
+            const textureLoader2 = new THREE.TextureLoader();
+            textureLoader2.load('https://supanuch-t.github.io/project2/Paer.jpg', function(texture) {
+            const geometry = new THREE.PlaneGeometry(2, 2);
+            const material = new THREE.MeshBasicMaterial({ map: texture });
+            const plane = new THREE.Mesh(geometry, material);
+            plane.position.set(-3, 10, -5.5);
+            scene.add(plane);
+        });
+
         function animate() {
             requestAnimationFrame(animate);
             controls.update();
